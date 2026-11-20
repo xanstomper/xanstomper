@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" height="280">
+  <defs>
+    <!-- Background Space Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="40%" stop-color="#0b0f19"/>
+      <stop offset="70%" stop-color="#1e1035"/>
+      <stop offset="100%" stop-color="#050814"/>
+    </linearGradient>
+
+    <!-- Neon Sun / Core Gradient -->
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="40%" stop-color="#ec4899"/>
+      <stop offset="80%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <!-- Horizon Laser Beam -->
+    <linearGradient id="horizonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ec4899" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Wireframe Grid Gradient -->
+    <linearGradient id="gridFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Grid Motion Animation -->
+    <style>
+      @keyframes gridScroll {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(40px); }
+      }
+      @keyframes corePulse {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 25px rgba(236,72,153,0.6)); }
+        50% { transform: scale(1.06); filter: drop-shadow(0 0 45px rgba(56,189,248,0.8)); }
+      }
+      @keyframes starTwinkle {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.3); }
+      }
+      @keyframes auroraWave {
+        0%, 100% { transform: scaleY(1); opacity: 0.4; }
+        50% { transform: scaleY(1.3); opacity: 0.75; }
+      }
+      @keyframes laserScan {
+        0% { transform: translateX(-600px); }
+        100% { transform: translateX(1200px); }
+      }
+      .grid-lines { animation: gridScroll 1.8s linear infinite; }
+      .core { animation: corePulse 5s infinite ease-in-out; transform-origin: 500px 140px; }
+      .twinkle-1 { animation: starTwinkle 3s infinite ease-in-out; }
+      .twinkle-2 { animation: starTwinkle 4s infinite ease-in-out 1.5s; }
+      .twinkle-3 { animation: starTwinkle 2.5s infinite ease-in-out 0.8s; }
+      .aurora { animation: auroraWave 6s infinite ease-in-out; transform-origin: center; }
+      .scan-beam { animation: laserScan 4s infinite linear; }
+    </style>
+  </defs>
+
+  <!-- Sky Canvas with Rounded Border -->
+  <rect width="1000" height="280" rx="16" fill="url(#skyGrad)" stroke="#261b40" stroke-width="1.5"/>
+
+  <!-- Nebula / Aurora Clouds -->
+  <ellipse cx="500" cy="130" rx="360" ry="80" fill="#a855f7" opacity="0.15" filter="blur(50px)" class="aurora"/>
+  <ellipse cx="300" cy="100" rx="200" ry="60" fill="#38bdf8" opacity="0.12" filter="blur(40px)"/>
+  <ellipse cx="700" cy="100" rx="200" ry="60" fill="#ec4899" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Starfield (Pulsing) -->
+  <g fill="#ffffff">
+    <circle cx="80" cy="40" r="1.5" class="twinkle-1"/>
+    <circle cx="160" cy="90" r="1.2" class="twinkle-2"/>
+    <circle cx="240" cy="30" r="2" class="twinkle-3"/>
+    <circle cx="340" cy="70" r="1" class="twinkle-1"/>
+    <circle cx="420" cy="35" r="1.8" class="twinkle-2"/>
+    <circle cx="580" cy="40" r="1.5" class="twinkle-3"/>
+    <circle cx="680" cy="80" r="2" class="twinkle-1"/>
+    <circle cx="770" cy="30" r="1.2" class="twinkle-2"/>
+    <circle cx="850" cy="75" r="1.8" class="twinkle-3"/>
+    <circle cx="920" cy="45" r="1" class="twinkle-1"/>
+    <circle cx="120" cy="120" r="1.5" class="twinkle-2"/>
+    <circle cx="880" cy="115" r="1.5" class="twinkle-3"/>
+  </g>
+
+  <!-- Central Celestial Core / Retro-Future Sun -->
+  <g class="core">
+    <!-- Sun Discs with Horizon Blinds -->
+    <circle cx="500" cy="135" r="68" fill="url(#coreGrad)"/>
+    <!-- Horizon cutouts for retro synth look -->
+    <rect x="420" y="122" width="160" height="3" fill="#1e1035"/>
+    <rect x="420" y="130" width="160" height="5" fill="#1e1035"/>
+    <rect x="420" y="140" width="160" height="7" fill="#1e1035"/>
+    <rect x="420" y="152" width="160" height="10" fill="#1e1035"/>
+    <rect x="420" y="167" width="160" height="14" fill="#0b0f19"/>
+  </g>
+
+  <!-- Horizon Line with Laser Flare -->
+  <line x1="0" y1="168" x2="1000" y2="168" stroke="url(#horizonGlow)" stroke-width="2.5"/>
+  <ellipse cx="500" cy="168" rx="220" ry="4" fill="#ec4899" opacity="0.8" filter="blur(3px)"/>
+
+  <!-- Scanning Light Particle on Horizon -->
+  <circle cx="0" cy="168" r="4" fill="#38bdf8" filter="drop-shadow(0 0 10px #38bdf8)" class="scan-beam"/>
+
+  <!-- 3D PERSPECTIVE WIREFRAME GRID (Ground Plane) -->
+  <g clip-path="url(#groundClip)">
+    <clipPath id="groundClip">
+      <rect x="0" y="168" width="1000" height="112" rx="0 0 16 16"/>
+    </clipPath>
+
+    <!-- Perspective Vanishing Lines (radiating from horizon center 500, 168) -->
+    <g stroke="url(#gridFade)" stroke-width="1.2">
+      <line x1="500" y1="168" x2="-200" y2="280"/>
+      <line x1="500" y1="168" x2="-50" y2="280"/>
+      <line x1="500" y1="168" x2="100" y2="280"/>
+      <line x1="500" y1="168" x2="220" y2="280"/>
+      <line x1="500" y1="168" x2="330" y2="280"/>
+      <line x1="500" y1="168" x2="420" y2="280"/>
+      <line x1="500" y1="168" x2="480" y2="280"/>
+      <line x1="500" y1="168" x2="520" y2="280"/>
+      <line x1="500" y1="168" x2="580" y2="280"/>
+      <line x1="500" y1="168" x2="670" y2="280"/>
+      <line x1="500" y1="168" x2="780" y2="280"/>
+      <line x1="500" y1="168" x2="900" y2="280"/>
+      <line x1="500" y1="168" x2="1050" y2="280"/>
+      <line x1="500" y1="168" x2="1200" y2="280"/>
+    </g>
+
+    <!-- Moving Horizontal Transverse Lines (creates the illusion of forward speed) -->
+    <g stroke="url(#gridFade)" stroke-width="1.4" class="grid-lines">
+      <line x1="0" y1="172" x2="1000" y2="172" opacity="0.3"/>
+      <line x1="0" y1="180" x2="1000" y2="180" opacity="0.45"/>
+      <line x1="0" y1="192" x2="1000" y2="192" opacity="0.6"/>
+      <line x1="0" y1="210" x2="1000" y2="210" opacity="0.75"/>
+      <line x1="0" y1="234" x2="1000" y2="234" opacity="0.9"/>
+      <line x1="0" y1="268" x2="1000" y2="268" opacity="1.0"/>
+      <line x1="0" y1="310" x2="1000" y2="310" opacity="1.0"/>
+    </g>
+  </g>
+
+  <!-- Ambient Dark Gradient Frame Vignette -->
+  <rect width="1000" height="280" rx="16" fill="none" stroke="url(#horizonGlow)" stroke-width="1" opacity="0.6"/>
+</svg>

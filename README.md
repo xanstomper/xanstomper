@@ -1,12 +1,21 @@
 <div align="center">
 
-<img src="./terminal.svg" width="100%" alt="xanstomper" />
+<img src="./animation.svg" width="100%" alt="cyberpunk horizon animation" />
 
 <br/><br/>
 
-### Systems Architecture · Hardware Emulation · Low-Level Runtimes
+```text
+  █████╗ ██████╗  ██████╗ ██████╗ ██╗ █████╗ 
+ ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██║██╔══██╗
+ ███████║██████╔╝██║   ██║██████╔╝██║███████║
+ ██╔══██║██╔═══╝ ██║   ██║██╔══██╗██║██╔══██║
+ ██║  ██║██║     ╚██████╔╝██║  ██║██║██║  ██║
+ ╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+```
 
-*Building software that makes hardware execute what it was never designed for — Windows PE64 on Xbox Dev Mode, commercial Switch emulation on console D3D12, AAA game engines running in WebGPU, and ultra-low-latency autonomous agent runtimes.*
+### `systems` · `hardware runtimes` · `emulators` · `autonomous agents`
+
+*Low-level systems architecture: executing Windows PE64 on Xbox Dev Mode, Switch emulation on console D3D12, AAA game engines running in WebGPU, and ultra-low-latency native agent runtimes.*
 
 <br/>
 
@@ -49,7 +58,7 @@
     <td width="50%" valign="top">
       <h3>🔬 <a href="https://github.com/xanstomper/coreprobe">CoreProbe</a></h3>
       <p><b>iOS Forensic Workstation & Zero-Day Research Platform</b></p>
-      <p>Open-source Cellebrite-class research suite: 77 verified public exploit routes, 36 CVE references, proprietary BFU (Before-First-Unlock) decryption stack, and automated DFU fuzzing harness.</p>
+      <p>Open-source research platform: 77 verified public exploit routes, 36 CVE references, proprietary BFU (Before-First-Unlock) decryption stack, and automated DFU fuzzing harness.</p>
       <p><code>Python</code> <code>C</code> <code>iOS Forensics</code> <code>Exploit RE</code></p>
     </td>
     <td width="50%" valign="top">
@@ -78,5 +87,5 @@
 ---
 
 <div align="center">
-<sub>XANSTOMPER · github.com/xanstomper</sub>
+<sub>APORIA · github.com/xanstomper</sub>
 </div>
