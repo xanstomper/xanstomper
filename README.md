@@ -11,7 +11,7 @@
 
 > "A lot can change in a matter of seconds. One could overthrow an empire. One could fall in love. An acorn does not become an oak overnight."
 
-I build software that makes hardware do things it was never supposed to do — Windows binaries on an Xbox, game engines in a browser tab, agents that plan on someone else's cloud and execute on your own machine.
+I build software that makes hardware do things it was never supposed to do — Windows binaries on an Xbox, game engines in a browser tab, autonomous agents that plan on someone else's cloud and execute on your own machine.
 
 ---
 
@@ -23,22 +23,22 @@ I build software that makes hardware do things it was never supposed to do — W
 | **[Nemulator](https://github.com/xanstomper/nemu)** | Switch emulator for Xbox Dev Mode — Horizon HLE, Maxwell SASS, D3D12. |
 | **[mochi](https://github.com/xanstomper/mochi)** | Minimal, fast autonomous coding agent for the terminal. Goals, task DAGs, multi-agent teams, 11ms cold start. |
 | **[coreprobe](https://github.com/xanstomper/coreprobe)** | Open-source iOS forensic workstation & zero-day research platform. |
-| **[celeste](https://github.com/xanstomper/celeste)** | AI browser agent that drives your real, logged-in browser — live viewport, trusted input. |
-| **[codex-cloud-bridge](https://github.com/xanstomper/codex-cloud-bridge)** | Give cloud agent sessions real tool access to your own PC through one authenticated HTTP bridge. |
+| **[terminus](https://github.com/xanstomper/terminus)** | Universal multi-agent terminal control plane you can reach from anywhere. |
+| **[SpyderMonkey](https://github.com/xanstomper/SpyderMonkey)** | The self-improving autonomous attack dispatcher: 11,683-skill corpus, self-play training, published benchmarks. |
 
 <details>
 <summary><b>more builds</b></summary>
 
 | project | what it is |
 |---|---|
-| **[freeforge](https://github.com/xanstomper/freeforge)** | OpenAI-compatible router across free inference backends — any agent, one endpoint. |
-| **[mirage](https://github.com/xanstomper/mirage)** | Turn an ephemeral Colab GPU session into a persistent cloud-gaming host. |
-| **[terminus](https://github.com/xanstomper/terminus)** | Universal multi-agent terminal control plane you can reach from anywhere. |
-| **[win2linux-kb](https://github.com/xanstomper/win2linux-kb)** | Windows 11 keyboard shortcuts on any Linux desktop, auto-detected per DE. |
-| **[muse-linux](https://github.com/xanstomper/muse-linux)** | Native Linux client, policy-gated companion daemon. |
 | **[GroveTheft](https://github.com/xanstomper/GroveTheft)** | GTA V's RAGE engine in the browser — WebGPU/WASM, self-hosted. |
-| **[linux-synthex](https://github.com/xanstomper/linux-synthex)** | Fedora-based AI-first desktop distro. |
-| **[Vibe](https://github.com/xanstomper/Vibe)** | The language humans enjoy and AI understands. |
+| **[castle-pc-web](https://github.com/xanstomper/castle-pc-web)** | Castle Crashers PC browser port — self-hosted Ruffle/WASM Flash-era engine & AVM1 injection harness. |
+| **[CherryBlossom](https://github.com/xanstomper/CherryBlossom)** | Xbox 360 Stealth Server — Gold bypass, HV patching, offline mode. |
+| **[mopie](https://github.com/xanstomper/mopie)** | M5StickC Plus pentest + AI-agent firmware with from-scratch embedded UI. |
+| **[WhereDaFlock](https://github.com/xanstomper/WhereDaFlock)** | Privacy iOS app + receive-only ESP32 detector for Flock Cam surveillance devices. |
+| **[muse-linux](https://github.com/xanstomper/muse-linux)** | Native Linux client for Meta Muse — Tauri app + policy-gated companion daemon. |
+| **[HolyShit](https://github.com/xanstomper/HolyShit)** | Red-team mandate persona & engagement framework. 25-section doctrine, 116 attack classes. |
+| **[mochi-skills](https://github.com/xanstomper/mochi-skills)** | Official community skill catalog for Mochi agent. |
 
 </details>
 
