@@ -1,180 +1,118 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" width="100%" height="220">
   <defs>
-    <!-- Gradients -->
-    <linearGradient id="windowBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#10b981" stop-opacity="0.6"/>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811"/>
+      <stop offset="50%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#030712"/>
     </linearGradient>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#161b22"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
-    <linearGradient id="tabActive" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1f2937"/>
-      <stop offset="100%" stop-color="#111827"/>
-    </linearGradient>
-    
-    <!-- CRT Scanline Pattern -->
-    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="100" y2="0" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.04" />
-    </pattern>
 
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="40%" stop-color="#e0f2fe"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Moving Signal Packet along wire -->
     <style>
-      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-      @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 4px #10b981); } 50% { filter: drop-shadow(0 0 10px #10b981); } }
-      @keyframes radarSweep { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-      
-      /* Staggered Boot Sequence */
-      @keyframes fadeStep1 { 0%, 2% { opacity: 0; transform: translateY(4px); } 6%, 100% { opacity: 1; transform: translateY(0); } }
-      @keyframes fadeStep2 { 0%, 8% { opacity: 0; transform: translateY(4px); } 14%, 100% { opacity: 1; transform: translateY(0); } }
-      @keyframes fadeStep3 { 0%, 16% { opacity: 0; transform: translateY(4px); } 22%, 100% { opacity: 1; transform: translateY(0); } }
-      @keyframes fadeStep4 { 0%, 24% { opacity: 0; transform: translateY(4px); } 30%, 100% { opacity: 1; transform: translateY(0); } }
-      @keyframes fadeStep5 { 0%, 32% { opacity: 0; transform: translateY(4px); } 38%, 100% { opacity: 1; transform: translateY(0); } }
-
-      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', ui-monospace, Menlo, Monaco, monospace; }
-      .line1 { animation: fadeStep1 12s infinite; }
-      .line2 { animation: fadeStep2 12s infinite; }
-      .line3 { animation: fadeStep3 12s infinite; }
-      .line4 { animation: fadeStep4 12s infinite; }
-      .line5 { animation: fadeStep5 12s infinite; }
-      
-      .cursor { fill: #38bdf8; animation: blink 0.9s infinite; }
-      .status-pulse { animation: pulseGlow 2.5s infinite ease-in-out; }
-      .radar { animation: radarSweep 4s infinite ease-in-out; }
+      @keyframes pulseBeam {
+        0%, 100% { transform: scaleX(0.96); opacity: 0.6; }
+        50% { transform: scaleX(1.02); opacity: 1; filter: drop-shadow(0 0 12px #38bdf8); }
+      }
+      @keyframes travelPacket {
+        0% { transform: translateX(-100px); opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateX(1060px); opacity: 0; }
+      }
+      @keyframes travelPacket2 {
+        0% { transform: translateX(1060px); opacity: 0; }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { transform: translateX(-100px); opacity: 0; }
+      }
+      @keyframes breatheNodes {
+        0%, 100% { r: 3px; opacity: 0.5; }
+        50% { r: 4.5px; opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+      }
+      .beam { animation: pulseBeam 4s infinite ease-in-out; transform-origin: center; }
+      .packet1 { animation: travelPacket 5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+      .packet2 { animation: travelPacket2 7s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+      .node-pulse { animation: breatheNodes 3s infinite ease-in-out; }
     </style>
   </defs>
 
-  <!-- Ambient Glow Behind Terminal -->
-  <rect x="5" y="5" width="890" height="390" rx="14" fill="#030712" />
-  
-  <!-- Outer Window with Gradient Border -->
-  <rect x="1" y="1" width="898" height="398" rx="12" fill="#090d13" stroke="url(#windowBorder)" stroke-width="1.8" />
+  <!-- Background Base -->
+  <rect width="960" height="220" rx="14" fill="url(#bgGlow)" stroke="#1e293b" stroke-width="1.5"/>
 
-  <!-- Top Title / Tab Bar -->
-  <path d="M 1 12 C 1 5.9 5.9 1 12 1 L 888 1 C 894.1 1 898 5.9 898 12 L 898 42 L 1 42 Z" fill="url(#headerGrad)" stroke="#1f2937" stroke-width="0.8" />
-  
-  <!-- Traffic Light Dots -->
-  <circle cx="24" cy="21" r="6" fill="#ff5f56" stroke="#e0443e" stroke-width="0.5" />
-  <circle cx="44" cy="21" r="6" fill="#ffbd2e" stroke="#dea123" stroke-width="0.5" />
-  <circle cx="64" cy="21" r="6" fill="#27c93f" stroke="#1aab29" stroke-width="0.5" />
-
-  <!-- Tabs -->
-  <g transform="translate(95, 8)">
-    <!-- Active Tab -->
-    <path d="M 0 34 L 0 6 C 0 2 3 0 7 0 L 165 0 C 169 0 172 2 172 6 L 172 34 Z" fill="url(#tabActive)" stroke="#374151" stroke-width="1" />
-    <circle cx="16" cy="17" r="3.5" fill="#10b981" class="status-pulse" />
-    <text x="28" y="21" fill="#f3f4f6" font-size="11.5" class="mono" font-weight="600">xanstomper.sh</text>
-    
-    <!-- Inactive Tab 1 -->
-    <g transform="translate(180, 0)">
-      <rect width="145" height="34" rx="4" fill="transparent" />
-      <text x="12" y="21" fill="#6b7280" font-size="11" class="mono">⚡ spydermonkey</text>
-    </g>
-
-    <!-- Inactive Tab 2 -->
-    <g transform="translate(330, 0)">
-      <rect width="130" height="34" rx="4" fill="transparent" />
-      <text x="12" y="21" fill="#6b7280" font-size="11" class="mono">🎮 tiramisu-uwp</text>
-    </g>
+  <!-- Subtle Perspective Grid / Hardware Blueprint Lines -->
+  <g stroke="#1e293b" stroke-width="0.8" opacity="0.45">
+    <line x1="0" y1="40" x2="960" y2="40"/>
+    <line x1="0" y1="180" x2="960" y2="180"/>
+    <line x1="160" y1="0" x2="160" y2="220"/>
+    <line x1="800" y1="0" x2="800" y2="220"/>
+    <line x1="480" y1="0" x2="480" y2="220" stroke-dasharray="4,6" opacity="0.4"/>
   </g>
 
-  <!-- Right-side Host Chip -->
-  <g transform="translate(730, 12)">
-    <rect width="150" height="20" rx="10" fill="#111827" stroke="#374151" stroke-width="0.8" />
-    <circle cx="12" cy="10" r="3" fill="#38bdf8" />
-    <text x="22" y="14" fill="#9ca3af" font-size="10" class="mono">node // x86_64</text>
+  <!-- Ambient Light Orbs -->
+  <circle cx="200" cy="110" r="140" fill="url(#purpleGlow)" filter="blur(40px)"/>
+  <circle cx="760" cy="110" r="140" fill="url(#purpleGlow)" filter="blur(40px)"/>
+
+  <!-- Hardware Circuit Accents -->
+  <path d="M 60 110 L 140 110 L 170 80 L 320 80" stroke="#334155" stroke-width="1.2" fill="none"/>
+  <path d="M 640 140 L 790 140 L 820 110 L 900 110" stroke="#334155" stroke-width="1.2" fill="none"/>
+
+  <!-- Dynamic Glowing Beams -->
+  <line x1="120" y1="110" x2="840" y2="110" stroke="url(#cyanLine)" stroke-width="1.6" class="beam"/>
+
+  <!-- Flying Signal Packets -->
+  <g class="packet1">
+    <circle cx="0" cy="110" r="3.5" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
+    <line x1="-30" y1="110" x2="0" y2="110" stroke="#38bdf8" stroke-width="2" opacity="0.7"/>
+  </g>
+  <g class="packet2">
+    <circle cx="0" cy="110" r="3" fill="#818cf8" filter="drop-shadow(0 0 8px #818cf8)"/>
+    <line x1="0" y1="110" x2="30" y2="110" stroke="#818cf8" stroke-width="1.8" opacity="0.6"/>
   </g>
 
-  <!-- CRT Scanlines Overlay -->
-  <rect x="2" y="43" width="896" height="354" fill="url(#scanlines)" pointer-events="none" />
+  <!-- Circuit Junction Nodes -->
+  <circle cx="170" cy="80" r="3.5" fill="#38bdf8" class="node-pulse"/>
+  <circle cx="820" cy="110" r="3.5" fill="#818cf8" class="node-pulse"/>
+  <circle cx="140" cy="110" r="2.5" fill="#64748b"/>
+  <circle cx="790" cy="140" r="2.5" fill="#64748b"/>
 
-  <!-- Terminal Content Lines -->
-  <g transform="translate(30, 78)" class="mono" font-size="13" letter-spacing="0.2">
-    
-    <!-- Line 1: Identity & System Kernel -->
-    <g class="line1">
-      <text y="0">
-        <tspan fill="#38bdf8" font-weight="700">λ</tspan>
-        <tspan fill="#64748b"> system.init </tspan>
-        <tspan fill="#94a3b8">--profile</tspan>
-        <tspan fill="#e2e8f0"> xanstomper </tspan>
-        <tspan fill="#475569">[0.0011s]</tspan>
-      </text>
-      <text y="22" fill="#38bdf8" font-weight="600">
-        <tspan fill="#64748b">├─</tspan> role: <tspan fill="#f1f5f9">Systems · Native Runtimes · Emulators · Autonomous Agents</tspan>
-      </text>
-      <text y="42" fill="#94a3b8">
-        <tspan fill="#64748b">└─</tspan> core: <tspan fill="#a855f7">C++20 · Rust · D3D12 · WebGPU · Linux Kernel · ARM64/PE64</tspan>
-      </text>
-    </g>
+  <!-- Foreground Title Card -->
+  <g text-anchor="middle">
+    <!-- Top System Tag -->
+    <text x="480" y="58" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="4">
+      HARDWARE EMULATION · RUNTIMES · AUTONOMOUS SYSTEMS
+    </text>
 
-    <!-- Line 2: Flagship Targets Telemetry -->
-    <g transform="translate(0, 80)" class="line2">
-      <text y="0">
-        <tspan fill="#10b981" font-weight="700">λ</tspan>
-        <tspan fill="#64748b"> fleet.query </tspan>
-        <tspan fill="#94a3b8">--filter</tspan>
-        <tspan fill="#e2e8f0"> active-breakthroughs</tspan>
-      </text>
-      
-      <g transform="translate(0, 24)" font-size="12">
-        <!-- Target 1 -->
-        <rect x="0" y="0" width="190" height="24" rx="4" fill="#132338" stroke="#0284c7" stroke-width="0.8" />
-        <circle cx="10" cy="12" r="3" fill="#38bdf8" />
-        <text x="20" y="16" fill="#e0f2fe" font-weight="600">TIRAMISU (Xbox PE64)</text>
+    <!-- Main Name -->
+    <text x="480" y="122" fill="url(#textGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" letter-spacing="10">
+      XANSTOMPER
+    </text>
 
-        <!-- Target 2 -->
-        <rect x="202" y="0" width="190" height="24" rx="4" fill="#201335" stroke="#9333ea" stroke-width="0.8" />
-        <circle cx="212" cy="12" r="3" fill="#c084fc" />
-        <text x="222" y="16" fill="#f3e8ff" font-weight="600">NEMU (Switch D3D12)</text>
-
-        <!-- Target 3 -->
-        <rect x="404" y="0" width="200" height="24" rx="4" fill="#0d291e" stroke="#059669" stroke-width="0.8" />
-        <circle cx="414" cy="12" r="3" fill="#34d399" />
-        <text x="424" y="16" fill="#ecfdf5" font-weight="600">MOCHI (11ms Native)</text>
-
-        <!-- Target 4 -->
-        <rect x="616" y="0" width="220" height="24" rx="4" fill="#2d151d" stroke="#e11d48" stroke-width="0.8" />
-        <circle cx="626" cy="12" r="3" fill="#fb7185" />
-        <text x="636" y="16" fill="#ffe4e6" font-weight="600">GROVETHEFT (GTA5 Web)</text>
-      </g>
-    </g>
-
-    <!-- Line 3: Offensive Security & Zero-Day Cluster -->
-    <g transform="translate(0, 148)" class="line3">
-      <text y="0">
-        <tspan fill="#f59e0b" font-weight="700">λ</tspan>
-        <tspan fill="#64748b"> spydermonkey </tspan>
-        <tspan fill="#e2e8f0">--selftest --mandates</tspan>
-      </text>
-      <text y="22" fill="#10b981" font-weight="500">
-        <tspan fill="#64748b">├─</tspan> 🕷 11,683-SKILL CORPUS ACTIVE · 10 MANDATES ONLINE · 100% SELF-BENCH
-      </text>
-      <text y="42" fill="#38bdf8">
-        <tspan fill="#64748b">└─</tspan> 🔬 COREPROBE: iOS Forensic Workstation · 77 Exploit Routes · 36 CVEs
-      </text>
-    </g>
-
-    <!-- Line 4: Live PTY Hardware Terminal Statement -->
-    <g transform="translate(0, 230)" class="line4">
-      <rect x="-6" y="-14" width="850" height="32" rx="6" fill="#111827" stroke="#1f2937" stroke-width="1" />
-      <text y="8" font-size="12.5">
-        <tspan fill="#10b981">● READY</tspan>
-        <tspan fill="#64748b"> │ </tspan>
-        <tspan fill="#94a3b8">principle:</tspan>
-        <tspan fill="#f8fafc" font-weight="600"> "Native over emulated · Evidence over claims · Offline first."</tspan>
-      </text>
-    </g>
-
-    <!-- Line 5: Interactive Cursor Prompt -->
-    <g transform="translate(0, 288)" class="line5">
-      <text y="0" font-size="13.5">
-        <tspan fill="#38bdf8" font-weight="700">xanstomper@xenon</tspan><tspan fill="#64748b">:</tspan><tspan fill="#a855f7">~</tspan><tspan fill="#64748b">$</tspan>
-        <tspan fill="#f8fafc"> git commit -m "making hardware do what it was never supposed to do"</tspan>
-        <tspan class="cursor"> ▋</tspan>
-      </text>
-    </g>
-
+    <!-- Bottom Specs Line -->
+    <text x="480" y="162" fill="#94a3b8" font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" font-size="12" letter-spacing="1.5">
+      XBOX DEV MODE PE64  ·  SWITCH D3D12  ·  WEBGPU RAGE  ·  11ms NATIVE AGENT
+    </text>
   </g>
+
+  <!-- Corner Brackets (Precision Engineering Accents) -->
+  <path d="M 20 32 L 20 20 L 32 20" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8"/>
+  <path d="M 940 32 L 940 20 L 928 20" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8"/>
+  <path d="M 20 188 L 20 200 L 32 200" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8"/>
+  <path d="M 940 188 L 940 200 L 928 200" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.8"/>
 </svg>
