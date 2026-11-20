@@ -2,6 +2,8 @@
 
 <img src="./terminal.svg" width="100%" alt="xanstomper terminal" />
 
+<br/>
+
 ```text
  █████╗  ██████╗   ██████╗  ██████╗  ██╗  █████╗  
 ██╔══██╗ ██╔══██╗ ██╔═══██╗ ██╔══██╗ ██║ ██╔══██╗ 
@@ -11,71 +13,63 @@
 ╚═╝  ╚═╝ ╚═╝       ╚═════╝  ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═╝ 
 ```
 
-### systems · runtimes · emulators · agents
+### `systems` · `runtimes` · `emulators` · `autonomous agents`
 
 > *"I build software that makes hardware do things it was never supposed to do — Windows binaries on an Xbox, game engines in a browser tab, autonomous agents that plan on someone else's cloud and execute on your own machine."*
+
+<br/>
+
+[![C++20](https://img.shields.io/badge/C++20-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://github.com/xanstomper)
+[![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://github.com/xanstomper)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/xanstomper)
+[![D3D12](https://img.shields.io/badge/D3D12-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/xanstomper)
+[![WebGPU](https://img.shields.io/badge/WebGPU-AC162C?style=for-the-badge&logo=webgpu&logoColor=white)](https://github.com/xanstomper)
+[![Linux Kernel](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/xanstomper)
 
 </div>
 
 ---
 
-### ▸ currently shipping
+### ▸ ⚡ Flagship Systems & Runtimes
 
-| project | what it is |
-|---|---|
-| **[Tiramisu](https://github.com/xanstomper/Tiramisu)** | Run PC games on Xbox Series X\|S natively — a Windows PE64 runtime for Xbox Dev Mode. Wine's job, targeting UWP instead of POSIX. |
-| **[Nemulator](https://github.com/xanstomper/nemu)** | Switch emulator for Xbox Dev Mode — Horizon HLE, Maxwell SASS, D3D12. |
-| **[mochi](https://github.com/xanstomper/mochi)** | Minimal, fast autonomous coding agent for the terminal. Goals, task DAGs, multi-agent teams, 11ms cold start. |
-| **[coreprobe](https://github.com/xanstomper/coreprobe)** | Open-source iOS forensic workstation & zero-day research platform (77 public exploit routes). |
-| **[terminus](https://github.com/xanstomper/terminus)** | Universal multi-agent terminal control plane you can reach from anywhere. |
-| **[SpyderMonkey](https://github.com/xanstomper/SpyderMonkey)** | The self-improving autonomous attack dispatcher: 11,683-skill corpus, self-play training, published benchmarks. |
+| Project | Architecture & Execution | Tech Stack |
+| :--- | :--- | :--- |
+| **[Tiramisu](https://github.com/xanstomper/Tiramisu)** | Run PC games natively on Xbox Series X\|S — custom Windows PE64 translation layer targeting Xbox Dev Mode UWP without Wine. | `C++20` `Win32 HLE` `D3D12` |
+| **[Nemulator](https://github.com/xanstomper/nemu)** | Nintendo Switch emulator targeting Xbox Dev Mode — Horizon HLE (49 SVCs / 54 services), 162 Maxwell SASS shaders, MRT, 5GiB budget-tuned. | `C++20` `ARM64 JIT` `D3D12` |
+| **[mochi](https://github.com/xanstomper/mochi)** | Minimal, ultra-fast autonomous coding agent for the terminal. Goals, task DAGs, multi-agent teams, run traces, 11ms cold start, 1494 tests. | `Rust` `TypeScript` `TUI` |
+| **[GroveTheft](https://github.com/xanstomper/GroveTheft)** | GTA V self-hosted WebGPU/WASM in-browser engine port. Zero telemetry, moddable, Brotli-optimized direct RAGE pipeline. | `WebGPU` `WASM` `C++` |
+| **[castle-pc-web](https://github.com/xanstomper/castle-pc-web)** | Castle Crashers PC browser port — self-hosted Ruffle/WASM Flash-era engine & AVM1 injection harness. | `JavaScript` `AVM1` `WASM` |
+| **[coreprobe](https://github.com/xanstomper/coreprobe)** | Open-source iOS forensic workstation & zero-day research platform (77 public exploit routes, 36 CVEs, BFU decryption stack). | `Python` `C` `Exploit RE` |
+| **[terminus](https://github.com/xanstomper/terminus)** | Universal multi-agent control plane & persistent PTY daemon you can access from anywhere. | `Python` `FastAPI` `PTY` |
+| **[CherryBlossom](https://github.com/xanstomper/CherryBlossom)** | Xbox 360 Stealth Server — Gold bypass, HV live memory patching, offline mode. | `C++` `PPC` `Xbox 360` |
 
-<details open>
-<summary><b>more builds</b></summary>
+<details>
+<summary><b>▸ Additional Tooling & Hardware Builds</b></summary>
+<br/>
 
-| project | what it is |
-|---|---|
-| **[GroveTheft](https://github.com/xanstomper/GroveTheft)** | GTA V's RAGE engine in the browser — WebGPU/WASM, self-hosted. |
-| **[castle-pc-web](https://github.com/xanstomper/castle-pc-web)** | Castle Crashers PC browser port — self-hosted Ruffle/WASM Flash-era engine & AVM1 injection harness. |
-| **[CherryBlossom](https://github.com/xanstomper/CherryBlossom)** | Xbox 360 Stealth Server — Gold bypass, HV patching, offline mode. |
-| **[mopie](https://github.com/xanstomper/mopie)** | M5StickC Plus pentest + AI-agent firmware with from-scratch embedded UI. |
-| **[WhereDaFlock](https://github.com/xanstomper/WhereDaFlock)** | Privacy iOS app + receive-only ESP32 detector for Flock Cam surveillance devices. |
-| **[muse-linux](https://github.com/xanstomper/muse-linux)** | Native Linux client for Meta Muse — Tauri app + policy-gated companion daemon. |
-| **[HolyShit](https://github.com/xanstomper/HolyShit)** | Red-team mandate persona & engagement framework. 25-section doctrine, 116 attack classes. |
-| **[mochi-skills](https://github.com/xanstomper/mochi-skills)** | Official community skill catalog for Mochi agent. |
+| Project | What It Is | Tech |
+| :--- | :--- | :--- |
+| **[mopie](https://github.com/xanstomper/mopie)** | M5StickC Plus hardware pentest + AI-agent firmware with from-scratch embedded UI. | `ESP32` `C++` `IoT` |
+| **[WhereDaFlock](https://github.com/xanstomper/WhereDaFlock)** | Privacy iOS app + receive-only ESP32 detector for Flock Cam surveillance devices via 2.4GHz probe-request signatures. | `Swift` `C++` `ESP32` |
+| **[muse-linux](https://github.com/xanstomper/muse-linux)** | Native Linux client for Meta Muse — Tauri desktop shell + policy-gated companion daemon. | `Rust` `Tauri` `WebKit` |
+| **[SpyderMonkey](https://github.com/xanstomper/SpyderMonkey)** | Autonomous attack dispatcher: 11,683-skill corpus, self-play training, 50 MCP tools, zero runtime dependencies. | `Python` `Security` `MCP` |
+| **[HolyShit](https://github.com/xanstomper/HolyShit)** | Red-team mandate persona & engagement framework. 25-section doctrine, 116 attack classes. | `Security` `Doctrine` |
+| **[mochi-skills](https://github.com/xanstomper/mochi-skills)** | Official community skill catalog for Mochi coding agent. | `Markdown` `Skills` |
+| **[mochi-website](https://github.com/xanstomper/mochi-website)** | Live landing site & interactive documentation for Mochi. | `HTML5` `Tailwind` |
 
 </details>
 
 ---
 
-### ▸ stack
-
-<div align="center">
-
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Xbox](https://img.shields.io/badge/Xbox_Dev_Mode-107C10?style=flat-square&logo=xbox&logoColor=white)
-![D3D12](https://img.shields.io/badge/D3D12-0078D4?style=flat-square&logo=windows&logoColor=white)
-![Vulkan](https://img.shields.io/badge/Vulkan-AC162C?style=flat-square&logo=vulkan&logoColor=white)
-
-</div>
-
----
-
-### ▸ principles
+### ▸ Operating Doctrine
 
 ```text
-  no fake success      every bridge either works or names the gap
+  no fake success      every bridge either works or honestly names the gap
   native over emulated x64 runs at x64 speed on x64 hardware
-  evidence over claims gates, logs, screenshots, real hardware
+  evidence over claims gates, verified logs, screenshots, real hardware
   offline first        if it needs the cloud to boot, it isn't done
 ```
 
-```text
-$ uptime
-  building since 2025 · still shipping
-```
+<div align="center">
+<sub>uptime: building since 2025 · still shipping</sub>
+</div>
